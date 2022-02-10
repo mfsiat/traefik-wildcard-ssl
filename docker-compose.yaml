@@ -20,9 +20,9 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /home/maya/codes/practice/traefik/data/traefik.yml:/traefik.yml:ro
-      - /home/maya/codes/practice/traefik/data/acme.json:/acme.json
-      - /home/maya/codes/practice/traefik/data/config.yml:/config.yml:ro
+      - /home/ubuntu/traefik-wildcard-ssl/data/traefik.yml:/traefik.yml:ro
+      - /home/ubuntu/traefik-wildcard-ssl/data/acme.json:/acme.json
+      - /home/ubuntu/traefik-wildcard-ssl/data/config.yml:/config.yml:ro
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.traefik.entrypoints=http"
