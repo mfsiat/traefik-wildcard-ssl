@@ -26,18 +26,18 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.traefik.entrypoints=http"
-      - "traefik.http.routers.traefik.rule=Host(`traefik-dashboard.iqraservices.com`)"
+      - "traefik.http.routers.traefik.rule=Host(`traefik-dashboard.softopark.co`)"
       - "traefik.http.middlewares.traefik-auth.basicauth.users=USER:BASIC_AUTH_PASSWORD"
       - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
       - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
       - "traefik.http.routers.traefik-secure.entrypoints=https"
-      - "traefik.http.routers.traefik-secure.rule=Host(`traefik-dashboard.iqraservices.com`)"
+      - "traefik.http.routers.traefik-secure.rule=Host(`traefik-dashboard.softopark.co`)"
       - "traefik.http.routers.traefik-secure.middlewares=traefik-auth"
       - "traefik.http.routers.traefik-secure.tls=true"
       - "traefik.http.routers.traefik-secure.tls.certresolver=cloudflare"
-      - "traefik.http.routers.traefik-secure.tls.domains[0].main=iqraservices.com"
-      - "traefik.http.routers.traefik-secure.tls.domains[0].sans=*.iqraservices.com"
+      - "traefik.http.routers.traefik-secure.tls.domains[0].main=softopark.co"
+      - "traefik.http.routers.traefik-secure.tls.domains[0].sans=*.softopark.co"
       - "traefik.http.routers.traefik-secure.service=api@internal"
 
 networks:
